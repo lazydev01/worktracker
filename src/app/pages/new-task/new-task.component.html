@@ -1,0 +1,9 @@
+<app-header></app-header>
+<div class="centered-content">
+    <div class="modal-box form-group">
+        <h1 class="title">Create a new Task</h1>
+        <input #taskInput type="text" class="form-control has-background-light" placeholder="Enter the name of the task"/>
+        <button class="btn btn-primary add-button margin10" routerLink="../">Cancel</button>
+        <button class="btn btn-primary add-button margin10" (click)="addTask(taskInput.value)">Add</button>
+    </div>
+</div>

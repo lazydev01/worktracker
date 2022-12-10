@@ -1,0 +1,23 @@
+<app-header [currentUser]="currentUser"></app-header>
+<div class = "loginContainer">
+    <div class="loginHeadingContainer">
+        <h1 class = "loginHeading">Login</h1>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+        <div class = "loginInputTemplate">
+            <label for="email" class = "loginLabel">Email :</label>
+            <input type="email" placeholder = "Enter your Email" name = "email" class = "loginInput" formControlName = "email" required id="email"/>
+        </div>
+        <div *ngIf="loginForm.controls.email.dirty && loginForm.controls.email.errors?.['required']" class="danger">
+            This is a required Field
+        </div>
+        <div class = "loginInputTemplate">
+            <label for="password" class = "loginLabel">Password :</label>
+            <input type="password" placeholder = "Enter your Password" name = "password" class = "loginInput" formControlName = "password" required/>
+        </div>  
+        <div *ngIf="loginForm.controls.password.dirty && loginForm.controls.password.errors?.['required']" class="danger">
+            This is a required Field
+        </div>
+        <button class = "btn btn-primary loginButton" type="submit" [disabled]="loginForm.status==='INVALID'">Submit</button>
+    </form>
+</div>

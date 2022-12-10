@@ -1,0 +1,5 @@
+<div class="headerContainer">
+    <button *ngIf="!currentUser" class="btn btn-primary registerButton" (click)="navigateRegister()">Register</button>
+    <button *ngIf="!currentUser" class="btn btn-primary loginButton" (click)="navigateLogin()">Login</button>
+    <button *ngIf="currentUser" class="btn btn-primary logoutButton" (click)="logoutButton()">Logout</button>
+</div>

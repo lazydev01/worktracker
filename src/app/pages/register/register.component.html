@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class = "registerContainer">
+    <div class="registerHeadingContainer">
+        <h1 class = "registerHeading">Register</h1>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+        <div class = "registerInputTemplate">
+            <label for="name" class = "registerLabel">Name :</label>
+            <input type="text" placeholder = "Enter your Name" name = "name" class = "registerInput" formControlName = "name" required id="name"/>
+        </div>
+        <div *ngIf="registerForm.controls.name.dirty && registerForm.controls.name.errors?.['required']" class="danger">
+            This is a required Field
+        </div>
+        <div class = "registerInputTemplate">
+            <label for="email" class = "registerLabel">Email :</label>
+            <input type="email" placeholder = "Enter your Email" name = "email" class = "registerInput" formControlName = "email" required id="email"/>
+        </div>
+        <div *ngIf="registerForm.controls.email.dirty && registerForm.controls.email.errors?.['required']" class="danger">
+            This is a required Field
+        </div>
+        <div class = "registerInputTemplate">
+            <label for="password" class = "registerLabel">Password :</label>
+            <input type="password" placeholder = "Enter your Password" name = "password" class = "registerInput" formControlName = "password" required/>
+        </div>  
+        <div *ngIf="registerForm.controls.password.dirty && registerForm.controls.password.errors?.['required']" class="danger">
+            This is a required Field
+        </div>
+        <button class = "btn btn-primary registerButton" type="submit" [disabled]="registerForm.status==='INVALID'">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,62 @@
+form{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height : 100%;
+    flex-direction: column;
+    margin-top: 7%;
+}
+
+.registerLabel{
+    width : 100px;
+}
+
+.registerContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerHeadingContainer{
+    height: 30%;
+    display : flex;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.registerHeading{
+    position : absolute;
+    bottom : 0px;
+    left : 45%;
+    font-family: Roboto;
+}
+
+.registerInput, .registerLabel{
+    font-family: Nunito;
+    font-weight: bold;
+}
+
+.registerInputTemplate{
+    margin : 10px;
+}
+
+.registerButton{
+    margin : 10px;
+}
+
+.registerInput{
+    padding : 0 10px;
+    width: 270px;
+}
+
+.registerInput::placeholder{
+    padding : 10px; 
+}
+
+.danger{
+    color: red;
+    padding : 0px 10px;
+}
